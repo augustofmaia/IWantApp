@@ -1,8 +1,7 @@
-﻿namespace IWantApp.Domain.Products
+﻿namespace IWantApp.Domain.Products;
+
+public class Category : Entity
 {
-    public class Category
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
+    public string Name { get; set; }
+    public bool Active { get; set; } = true;
 }
