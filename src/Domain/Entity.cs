@@ -1,6 +1,8 @@
-﻿namespace IWantApp.Domain;
+﻿using Flunt.Notifications;
+// o NuGet Flunt foi usado para a entidade possa validar de uma vez so as exceptions, atravez de notificações encapsuladas
+namespace IWantApp.Domain;
 // Classe abstract não pode ser estanciada apenas herdada
-public abstract class Entity
+public abstract class Entity : Notifiable<Notification>
 {
     public Entity()
     {
