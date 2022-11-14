@@ -4,7 +4,7 @@ using IWantApp.Infra.Data;
 namespace IWantApp.Endpoints.Categories;
 
 public class CategoryPost
-{
+{ 
     public static string Template => "/categories";
     // O "=>" serve para setar a rota na hora que criar a propriedade 
     public static string[] Methods => new string[] { HttpMethod.Post.ToString() };
