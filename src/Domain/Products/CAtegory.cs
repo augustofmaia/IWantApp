@@ -7,7 +7,6 @@ public class Category : Entity
     public string Name { get; private set; }
     public bool Active { get; private set; }
 
-    //Tudo que é obrigatório para a criação deve passar por um construtor. É padrão quando for trabalhar com dominios 
     public Category(string name, string createdBy, string editedBy)
     {
         Name = name;
@@ -17,25 +16,26 @@ public class Category : Entity
         CreatedOn = DateTime.Now;
         EditedOn = DateTime.Now;
 
-        Validade();
-
+        Validate();
     }
 
-    private void Validade()
+    private void Validate()
     {
         var contract = new Contract<Category>()
             .IsNotNullOrEmpty(Name, "Name")
-            .IsGreaterOrEqualsThan(Name, 3, "name")
+            .IsGreaterOrEqualsThan(Name, 3, "Name")
             .IsNotNullOrEmpty(CreatedBy, "CreatedBy")
             .IsNotNullOrEmpty(EditedBy, "EditedBy");
         AddNotifications(contract);
     }
 
-    public void EditInfo(string name, bool active)
+    public void EditInfo(string name, bool active, string editedBy)
     {
         Active = active;
         Name = name;
+        EditedBy = editedBy;
+        EditedOn = DateTime.Now;
 
-        Validade();
-    } 
+        Validate();
+    }
 }
