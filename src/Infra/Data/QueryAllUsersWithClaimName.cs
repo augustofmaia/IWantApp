@@ -28,4 +28,9 @@ public class QueryAllUsersWithClaimName
             new { page, rows }
             );
     }
+
+    internal Task Execute()
+    {
+        throw new NotImplementedException();
+    }
 }
