@@ -85,4 +85,5 @@ app.Map("/error", (HttpContext http) => {
     return Results.Problem(title: "An error ocurred", statusCode: 500);
 });
 
+
 app.Run();
