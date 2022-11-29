@@ -1,4 +1,5 @@
 ﻿using Flunt.Validations;
+using IWantApp.Domain.Orders;
 
 namespace IWantApp.Domain.Products;
 // Foi criado um arquivo ".edtorconfig" para mudar o tipo de declaração de namespace para "Escopo de Arquivo". Assim a namespace fica acima do codigo, não envolvida na classe.
@@ -11,6 +12,7 @@ public class Product : Entity
     public bool HasStock { get; private set; }
     public bool Active { get; private set; } = true;
     public decimal Price { get; private set; }
+    public ICollection<Order> Orders { get; private set; }
 
     private Product() { }
 
